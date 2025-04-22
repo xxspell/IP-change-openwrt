@@ -99,7 +99,28 @@ go build -buildmode=exe -o ip-changer-client.exe /client/main.go
 ```
 
 ### Use 
-The hotkey to change the IP address is Ctrl + Shift + S.
+#### Hotkey mode (Default)
+Run the client normally to activate background mode with hotkey support (Ctrl + Shift + S):
 
+```bash
+./ip-changer
+```
 
+This will:
+- Run in the background
+- Listen for Ctrl + Shift + S
+- Trigger the IP change
+- Show a system notification
 
+#### CLI Mode
+You can also run commands directly from the command line:
+
+```bash
+./ip-changer cli reconnect
+```
+
+This will:
+- Send an immediate reconnect request
+- Wait for a response
+- Show a notification with old and new IPs
+- This is useful for scripting or creating your own hotkeys (e.g. with Hyprland, i3, etc.)
